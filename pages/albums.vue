@@ -5,6 +5,10 @@
         <!-- Bootstrap Grid section. -->
         <h2 class="p-3">Create Your Albums</h2>
 
+        <aside class="text-center">
+            <img v-for="(image, i) in miscImages" :key="i" :src="`../assets/content-images/${image}.jpg`" alt="Album template" title="Album template" class="img-fluid p-3" width="100" height="100" @click="imageDrop">
+        </aside>
+
         <!-- These are the little color boxes at the top to choose a background color. Click on them to activate the method "changeColor"-->
         <div class="container central-container">
 
@@ -32,8 +36,7 @@
 
             <!-- Main canvas for creating the album. -->
             <div class="main-canvas text-center m-3" id="canvas" style="height: 100vh; width: auto; border: 5px solid black;">
-                <div class="image-drop">
-                    <DropZone @drop.prevent="dropImage"></DropZone>
+                <div class="image-drop" id="image-drop">
                 </div>
             </div>
 
@@ -53,8 +56,8 @@
 
 
 <script>
-    import { DropZone } from 'dropzone-vue';
-    import { ref } from 'vue';
+    // import { DropZone } from 'dropzone-vue';
+    // import { ref } from 'vue';
 
     export default {
         data() {
@@ -83,20 +86,13 @@
                 const mainCanvas = document.getElementById('canvas');
                 // Changing the background color depending on which color is clicked on in the color divs at the top.
                 mainCanvas.style.background = color;
+            },
+            imageDrop(ev) {
+                const imageSpace = document.getElementById('image-drop');
+                let newImage = ev.target;
+                // console.log(newImage.src);
+                imageSpace.style.backgroundImage = `url(${newImage.src})`;
             }
-        },
-        components: {
-            DropZone
-        },
-        setup() {
-
-            const dropzoneFile = ref("");
-
-            const dropImage = (ev) => {
-                dropzoneFile.value = ev.dataTransfer.files[0]
-            }
-
-            return dropImage;
         }
     }
 
@@ -122,6 +118,31 @@
         justify-content: center;
         align-items: center;
         background-color: rgb(243, 243, 243);
+    }
+
+    .main-create {
+        position: relative;
+    }
+
+    .central-container {
+        margin-left: 12rem;
+    }
+
+    aside {
+        float: left;
+        width: 10rem;
+        height: 90vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow-y: scroll;
+    }
+
+    .image-drop img {
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
     }
 
 </style>

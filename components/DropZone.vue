@@ -10,7 +10,7 @@
         <p>Drag or Drop File</p>
         <p>OR</p>
         <label for="dropzoneFile">Select File</label>
-        <input type="file" id="dropzoneFile">
+        <input type="file" id="dropzoneFile" class="dropzoneFile">
     </div>
 
 </template>
