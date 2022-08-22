@@ -8,7 +8,7 @@
 
         <!-- Dynamically rendered images using the "v-for" vue directive. Used props to pass these images from main App file to this child component, including binding the source, alt, and title attributes from the image objects. -->
         <div class="text-center">
-            <img v-for="(image, i) in templates" :key="i" :src="require(`~/assets/${image}.png`)" alt="Album template" title="Album template" class="img-fluid p-3" width="250" height="250">
+            <img v-for="(image, i) in templateImages" :key="i" :src="`../assets/img-templates/${image}.png`" alt="Album template" title="Album template" class="img-fluid p-3" width="250" height="250">
         </div>
     </div>
 
