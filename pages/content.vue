@@ -16,7 +16,7 @@
                     <div class="accordion-body">
                         <div class="text-center">
                             <!-- Dynamically looping through the misc images using the "v-for" vue directive. -->
-                            <img v-for="item in misc" v-bind:key="item" :src="require('../assets' + item + '.jpg')" alt="Misc pictures" class="img-fluid p-3" width="150" height="150">
+                            <img v-for="(item, i) in miscImages" :key="i" :src="require(`../assets/content-images/${item}.jpg`)" alt="Misc pictures" class="img-fluid p-3" width="150" height="150">
                         </div>
                     </div>
                 </div>
@@ -63,12 +63,24 @@
     export default {
         data() {
             return {
-                videos: []
+                videos: [],
+                miscImages: [
+                    'Beach7',
+                    'Hotel2',
+                    'Hotel5',
+                    'pic1',
+                    'pic2',
+                    'pic3',
+                    'pic4',
+                    'pic5',
+                    'pic6',
+                    'pic7',
+                    'pic8',
+                    'pic9',
+                    'pic10',
+                    'pic11'
+                ]
             }
-        },
-        // Injecting items from the main App file to this child component via props.
-        props: {
-            misc: Array
         }
     }
 

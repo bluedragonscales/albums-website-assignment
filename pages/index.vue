@@ -20,14 +20,6 @@
   export default {
     data() {
       return {
-        templateImages: [
-            {source: '/images/template-blank', alt: 'Album template', title: 'Album template'},
-            {source: '/images/template1', alt: 'Album template', title: 'Album template'},
-            {source: '/images/template2', alt: 'Album template', title: 'Album template'},
-            {source: '/images/template3', alt: 'Album template', title: 'Album template'},
-            {source: '/images/template4', alt: 'Album template', title: 'Album template'},
-            {source: '/images/template5', alt: 'Album template', title: 'Album template'}
-        ],
         miscImages: [
             '/images/Beach7',
             '/images/Hotel2',
