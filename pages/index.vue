@@ -20,22 +20,7 @@
   export default {
     data() {
       return {
-        miscImages: [
-            '/images/Beach7',
-            '/images/Hotel2',
-            '/images/Hotel5',
-            '/images/pic1',
-            '/images/pic2',
-            '/images/pic3',
-            '/images/pic4',
-            '/images/pic5',
-            '/images/pic6',
-            '/images/pic7',
-            '/images/pic8',
-            '/images/pic9',
-            '/images/pic10',
-            '/images/pic11'
-        ]
+        
       }
     }
   }
