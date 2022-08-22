@@ -16,7 +16,7 @@
                     <div class="accordion-body">
                         <div class="text-center">
                             <!-- Dynamically looping through the misc images using the "v-for" vue directive. -->
-                            <img v-for="(item, i) in miscImages" :key="i" :src="require(`../assets/content-images/${item}.jpg`)" alt="Misc pictures" class="img-fluid p-3" width="150" height="150">
+                            <img v-for="(item, index) in miscImages" :key="index" :src="`../assets/content-images/${item}.jpg`" alt="Misc pictures" title="Your misc images" class="img-fluid p-3" width="150" height="150">
                         </div>
                     </div>
                 </div>
@@ -44,8 +44,7 @@
                     <div class="accordion-body">
                         <!-- The two fake albums that the user might have already created. -->
                         <div class="text-center">
-                            <img src="../assets/images/album1.jpg" alt="Album template" class="img-fluid p-3" width="300" height="300">
-                            <img src="../assets/images/album2.jpg" alt="Album template" class="img-fluid p-3" width="300" height="300">
+                            <img v-for="(item, index) in albums" :key="index" :src="`../assets/albums/${item}.jpg`" alt="Finished albums" title="Your finished albums" class="img-fluid p-3" width="150" height="150">
                         </div>
                     </div>
                 </div>
@@ -64,6 +63,7 @@
         data() {
             return {
                 videos: [],
+                albums: ['album1', 'album2'],
                 miscImages: [
                     'Beach7',
                     'Hotel2',
