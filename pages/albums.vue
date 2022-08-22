@@ -118,6 +118,9 @@
         justify-content: center;
         align-items: center;
         background-color: rgb(243, 243, 243);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
     }
 
     .main-create {
@@ -137,12 +140,6 @@
         justify-content: center;
         align-items: center;
         overflow-y: scroll;
-    }
-
-    .image-drop img {
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: center;
     }
 
 </style>
