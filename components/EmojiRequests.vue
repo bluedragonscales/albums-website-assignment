@@ -1,10 +1,14 @@
 <template>
 
     <div class="emoji-list">
-        <p v-for="(emoji, index) in emojis" :key="index" class="m-3">{{emoji.name}}: <span>{{emoji.htmlCode[0]}}</span></p>
+        <div v-for="(emoji, index) in emojis" :key="index" class="m-3">
+            <p>{{emoji.htmlCode[0]}}</p>
+        </div>
     </div>
 
 </template>
+
+
 
 
 
@@ -45,7 +49,8 @@
         justify-content: center;
         align-items: center;
         overflow-x: scroll;
-        height: 10rem;
+        height: 8rem;
+        width: auto;
     }
 
 </style>
