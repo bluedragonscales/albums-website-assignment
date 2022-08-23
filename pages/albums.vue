@@ -49,6 +49,10 @@
             </div>
 
         </div>
+
+
+        <EmojiRequests></EmojiRequests>
+
     </div>
 
 </template>
@@ -56,8 +60,6 @@
 
 
 <script>
-    // import { DropZone } from 'dropzone-vue';
-    // import { ref } from 'vue';
 
     export default {
         data() {
