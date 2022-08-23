@@ -41,6 +41,9 @@
             </div>
 
 
+            <EmojiRequests></EmojiRequests>
+
+
             <!-- Buttons for adding pages, deleting pages, and publishing your album. -->
             <div class="text-center p-3">
                 <button type="button" name="button" class="btn btn-outline-info m-2" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" title="Click here to add a new page to your album.">Add Page</button>
@@ -49,9 +52,6 @@
             </div>
 
         </div>
-
-
-        <EmojiRequests></EmojiRequests>
 
     </div>
 
@@ -112,10 +112,10 @@
     }
 
     .image-drop {
-        width: 60%;
+        width: 40%;
         margin: 1rem;
-        height: 60%;
-        border: 2px solid black;
+        height: 90%;
+        padding: 10px;
         display: flex;
         justify-content: center;
         align-items: center;
