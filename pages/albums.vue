@@ -2,14 +2,14 @@
     <NavBar></NavBar>
 
     <div class="container text-center main-create">
-        <!-- Bootstrap Grid section. -->
         <h2 class="p-3">Create Your Albums</h2>
 
+        <!-- This aside is dynamically loading all of the misc images that are loaded in the content page. -->
         <aside class="text-center">
             <img v-for="(image, i) in miscImages" :key="i" :src="`../assets/content-images/${image}.jpg`" alt="Album template" title="Album template" class="img-fluid p-3" width="100" height="100" @click="imageDrop">
         </aside>
 
-        <!-- These are the little color boxes at the top to choose a background color. Click on them to activate the method "changeColor"-->
+        <!-- The Bootstrap grid section. These are the little color boxes at the top to choose a background color. Click on them to activate the method "changeColor"-->
         <div class="container central-container">
 
             <div class="row">
@@ -34,13 +34,14 @@
             </div>
 
 
-            <!-- Main canvas for creating the album. -->
+            <!-- Main canvas for creating the album. Use the color boxes above to change the color of the background. -->
             <div class="main-canvas text-center m-3" id="canvas" style="height: 100vh; width: auto; border: 5px solid black;">
                 <div class="image-drop" id="image-drop">
                 </div>
             </div>
 
 
+            <!-- Imported the component that renders the emojis from an external, free emoji API. -->
             <EmojiRequests></EmojiRequests>
 
 
@@ -90,6 +91,7 @@
                 mainCanvas.style.background = color;
             },
             imageDrop(ev) {
+                // This method lets me click on an image in left-hand aside to pop it into the canvas.
                 const imageSpace = document.getElementById('image-drop');
                 let newImage = ev.target;
                 // console.log(newImage.src);
