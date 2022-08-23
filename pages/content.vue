@@ -65,9 +65,6 @@
                 videos: [],
                 albums: ['album1', 'album2'],
                 miscImages: [
-                    'Beach7',
-                    'Hotel2',
-                    'Hotel5',
                     'pic1',
                     'pic2',
                     'pic3',
@@ -77,8 +74,7 @@
                     'pic7',
                     'pic8',
                     'pic9',
-                    'pic10',
-                    'pic11'
+                    'pic10'
                 ]
             }
         }
