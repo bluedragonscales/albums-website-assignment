@@ -1,61 +1,63 @@
 <template>
-    <NavBar></NavBar>
+    <div>
+        <NavBar></NavBar>
 
-    <div class="container text-center main-create">
-        <h2 class="p-3">Create Your Albums</h2>
+        <div class="container text-center main-create">
+            <h2 class="p-3">Create Your Albums</h2>
 
-        <!-- This aside is dynamically loading all of the misc images that are loaded in the content page. -->
-        <aside class="text-center">
-            <img v-for="(image, i) in miscImages" :key="i" :src="`../assets/content-images/${image}.jpg`" alt="Album template" title="Album template" class="img-fluid p-3" width="100" height="100" @click="imageDrop">
-        </aside>
+            <!-- This aside is dynamically loading all of the misc images that are loaded in the content page. -->
+            <aside class="text-center">
+                <img v-for="(image, i) in miscImages" :key="i" :src="`../assets/content-images/${image}.jpg`" alt="Album template" title="Album template" class="img-fluid p-3" width="100" height="100" @click="imageDrop">
+            </aside>
 
-        <!-- The Bootstrap grid section. These are the little color boxes at the top to choose a background color. Click on them to activate the method "changeColor"-->
-        <div class="container central-container">
+            <!-- The Bootstrap grid section. These are the little color boxes at the top to choose a background color. Click on them to activate the method "changeColor"-->
+            <div class="container central-container">
 
-            <div class="row">
-                <div class="col">
-                    <p>Choose your background color:</p>
+                <div class="row">
+                    <div class="col">
+                        <p>Choose your background color:</p>
+                    </div>
+                    <div class="col">
+                        <div class="color-box" @click="changeColor('#fff')"></div>
+                    </div>
+                    <div class="col">
+                        <div class="color-box bg-primary" @click="changeColor('#0D6EFD')"></div>
+                    </div>
+                    <div class="col">
+                        <div class="color-box bg-info" @click="changeColor('#0DCAF0')"></div>
+                    </div>
+                    <div class="col">
+                        <div class="color-box bg-dark" @click="changeColor('#000')"></div>
+                    </div>
+                    <div class="col">
+                        <div class="color-box bg-warning" @click="changeColor('#FFC107')"></div>
+                    </div>
                 </div>
-                <div class="col">
-                    <div class="color-box" @click="changeColor('#fff')"></div>
-                </div>
-                <div class="col">
-                    <div class="color-box bg-primary" @click="changeColor('#0D6EFD')"></div>
-                </div>
-                <div class="col">
-                    <div class="color-box bg-info" @click="changeColor('#0DCAF0')"></div>
-                </div>
-                <div class="col">
-                    <div class="color-box bg-dark" @click="changeColor('#000')"></div>
-                </div>
-                <div class="col">
-                    <div class="color-box bg-warning" @click="changeColor('#FFC107')"></div>
-                </div>
-            </div>
 
 
-            <!-- Main canvas for creating the album. Use the color boxes above to change the color of the background. -->
-            <div class="main-canvas text-center m-3" id="canvas" style="height: 100vh; width: auto; border: 5px solid black;">
-                <div class="image-drop" id="image-drop">
+                <!-- Main canvas for creating the album. Use the color boxes above to change the color of the background. -->
+                <div class="main-canvas text-center m-3" id="canvas" style="height: 100vh; width: auto; border: 5px solid black;">
+                    <div class="image-drop" id="image-drop">
+                    </div>
                 </div>
-            </div>
 
 
-            <!-- Imported the component that renders the emojis from an external, free emoji API. -->
-            <EmojiRequests></EmojiRequests>
+                <!-- Imported the component that renders the emojis from an external, free emoji API. -->
+                <EmojiRequests></EmojiRequests>
 
 
-            <!-- Buttons for adding pages, deleting pages, and publishing your album. -->
-            <div class="text-center p-3">
-                <button type="button" name="button" class="btn btn-outline-info m-2" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" title="Click here to add a new page to your album.">Add Page</button>
-                <button type="button" name="button" class="btn btn-outline-info m-2" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" title="Click here to delete the current page of your album.">Delete Page</button>
-                <button type="button" name="button" class="btn btn-outline-info m-2" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" title="Click here to publish your album so you can start sharing it with friends and family.">Publish Album</button>
+                <!-- Buttons for adding pages, deleting pages, and publishing your album. -->
+                <div class="text-center p-3">
+                    <button type="button" name="button" class="btn btn-outline-info m-2" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" title="Click here to add a new page to your album.">Add Page</button>
+                    <button type="button" name="button" class="btn btn-outline-info m-2" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" title="Click here to delete the current page of your album.">Delete Page</button>
+                    <button type="button" name="button" class="btn btn-outline-info m-2" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" title="Click here to publish your album so you can start sharing it with friends and family.">Publish Album</button>
+                </div>
+
             </div>
 
         </div>
 
     </div>
-
 </template>
 
 
